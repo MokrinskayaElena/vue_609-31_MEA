@@ -1,5 +1,6 @@
 <script setup>
-  import VCatalog from "./components/VCatalog.vue"
+  import { RouterLink, RouterView } from "vue-router";
+import CatalogView from "./views/CatalogView.vue"
 </script>
 <template>
   <body class="flex flex-col justify-between h-dvh">
@@ -18,8 +19,8 @@
         </div>
         <ul class="flex gap-10">
             <li>
-              <a
-                  href=""
+              <RouterLink
+                  :to="{name: 'cart'}"
                   class="flex gap-3 items-center"
               >
                   <span
@@ -31,11 +32,11 @@
                       />
                 </span>
                 Корзина
-              </a>
+              </RouterLink>
             </li>
             <li>
-              <a
-                  href=""
+              <RouterLink
+                  :to="{name: 'favorites'}"
                   class="flex gap-3 items-center"
               >
                   <span
@@ -47,11 +48,11 @@
                       />
                 </span>
                 Избранное
-              </a>
+              </RouterLink>
             </li>
-                        <li>
-              <a
-                  href=""
+            <li>
+              <RouterLink
+                  :to="{name: 'orders'}"
                   class="flex gap-3 items-center"
               >
                   <span
@@ -63,12 +64,12 @@
                       />
                 </span>
                 Заказы
-              </a>
+              </RouterLink>
             </li>
         </ul>
       </div>
     </nav>
-    <v-catalog />
+    <RouterView />
   </div>
   <footer class="p-6 bg-slate-100">
     <div class="text-center text-slate-500">
